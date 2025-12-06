@@ -37,7 +37,7 @@ export function Hero() {
   
   const defaultInfo = {
     greeting: "안녕하세요,",
-    name: "송민욱입니다",
+    name: "송민욱",
     title: "Urban Planning & Real Estate Student",
     description: "데이터와 공간을 잇는 도시계획 전공자",
     profileImage: "/uploads/hero-profile-1765006902571.jpg",
