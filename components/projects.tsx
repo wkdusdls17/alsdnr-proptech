@@ -17,13 +17,8 @@ export function Projects() {
     subtitle: "프로젝트",
     initialDisplay: 6,
     loadMoreCount: 3,
-    background: {
-      image: "",
-      video: "",
-      color: "",
-      opacity: 0.1
-    },
-    projects: [] as Array<{ image: string; video?: string; title: string; description: string }>
+    background: {"image":"","video":"","color":"","opacity":0.1},
+    projects: [{"image":"/uploads/project-1765009761560-1765009761580.jpg","video":"","title":"가우디의 주택과 건축적 특성","description":"안토니 가우디의 건축 철학과 대표 주택(카사 비센스, 구엘 저택, 카사 바트요, 카사 밀라)을 분석하고, 바르셀로나의 도시 구조와의 관계를 함께 고찰한 프로젝트입니다. 자연을 모티프로 한 유기적 곡선, 역선 아치·쌍곡면 등 혁신적 구조기법, 채광과 환기를 고려한 공간 설계, 카탈루냐 지역성을 반영한 장식적 조형성을 중심으로 가우디 건축의 핵심 특성을 정리했습니다. 또한 바르셀로나의 격자형 도시계획 속에서 가우디 건축이 도시의 단조로움을 해소하며 독창적 정체성을 형성한 점을 분석하고, 이러한 특징들이 한국 아파트 디자인의 다양성·지역성·주거 편의 향상에 어떤 시사점을 줄 수 있는지 탐구했습니다."}] as Array<{ image: string; video?: string; title: string; description: string }>
   }
 
   const [projectsInfo, setProjectsInfo] = useState(defaultInfo)
@@ -742,6 +737,14 @@ export function Projects() {
                 className="flex-1 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
               >
                 📁 저장 & 완료
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}료
               </button>
             </div>
           </div>

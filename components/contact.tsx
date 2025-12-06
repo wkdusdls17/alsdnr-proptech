@@ -34,12 +34,12 @@ export function Contact() {
   
   // 기본 데이터
   const defaultInfo = {
-    name: "당신의 이름",
-    title: "직책/직무",
+    name: "송민욱",
+    title: "단국대학교 도시계획부동산학부 재학중",
     company: "",
-    experience: "3년 경력",
-    phone: "010-0000-0000",
-    email: "your-email@example.com",
+    experience: "2학년",
+    phone: "010-7742-8636",
+    email: "ssongminwook@naver.com",
     website: "",
     location: "당신의 위치",
     workTime: "평일 09:00 - 18:00",
