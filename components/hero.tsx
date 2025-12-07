@@ -142,30 +142,37 @@ export function Hero() {
   }
 
   return (
-    <EditableBackground
-      image={backgroundData?.image || ""}
-      video={backgroundData?.video || ""}
-      color={backgroundData?.color || ""}
-      opacity={backgroundData?.opacity || 0.1}
+  <EditableBackground
+      image={backgroundData?.image || heroInfo.background.image || ""}
+      video={backgroundData?.video || heroInfo.background.video || ""}
+      color={backgroundData?.color || heroInfo.background.color || ""}
+      opacity={
+        backgroundData?.opacity ??
+        heroInfo.background.opacity ??
+        0.1
+      }
       onChange={(data) => {
         const newData = {
-          image: backgroundData?.image || "",
-          video: backgroundData?.video || "",
-          color: backgroundData?.color || "",
-          opacity: backgroundData?.opacity || 0.1,
-          ...data
+          image: backgroundData?.image || heroInfo.background.image || "",
+          video: backgroundData?.video || heroInfo.background.video || "",
+          color: backgroundData?.color || heroInfo.background.color || "",
+          opacity:
+            backgroundData?.opacity ??
+            heroInfo.background.opacity ??
+            0.1,
+          ...data,
         }
         setBackgroundData(newData)
-        saveData('hero-background', newData)
-        
+        saveData("hero-background", newData)
+
         // heroInfo도 업데이트 (파일 저장을 위해)
         const updatedHeroInfo = { ...heroInfo, background: newData }
         setHeroInfo(updatedHeroInfo)
-        saveData('hero-info', updatedHeroInfo)
+        saveData("hero-info", updatedHeroInfo)
       }}
       storageKey="hero-background"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-    >
+  >
       <section 
         id="hero" 
         className="w-full"
@@ -292,21 +299,7 @@ export function Hero() {
               {socialLinks.map((link, index) => {
                 const Icon = AVAILABLE_ICONS[link.icon as keyof typeof AVAILABLE_ICONS] || Globe
                 
-                return (
-                  <div key={index} className="flex items-center gap-3 p-3 border rounded-lg">
-                    {/* 아이콘 미리보기 */}
-                    <div className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    
-                    {/* 플랫폼 이름 입력 */}
-                    <input
-                      type="text"
-                      value={link.name}
-                      onChange={(e) => updateSocialLink(index, 'name', e.target.value)}
-                      placeholder="플랫폼 이름"
-                      className="w-32 px-3 py-2 border rounded-lg bg-background"
-                    />
+                return ( <div key={index} className="flex items-center gap-3 p-3 border rounded-lg"> {/* 아이콘 미리보기 */} <div className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center"> <Icon className="h-5 w-5" /> </div> {/* 플랫폼 이름 입력 */} <input type="text" value={link.name} onChange={(e) => updateSocialLink(index, 'name', e.target.value)} placeholder="플랫폼 이름" className="w-32 px-3 py-2 border rounded-lg bg-background" />                
                     
                     {/* 아이콘 선택 버튼 */}
                     <div className="relative">
