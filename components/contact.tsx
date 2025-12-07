@@ -52,7 +52,7 @@ export function Contact() {
     bottomSubMessage: "그 과정에서 언제나 사람들의 삶을 중심에 둔 도시를 고민하겠습니다",
     qrContent: ["name","phone","email","location","website","title"],
     profileEmoji: "👤",
-    background: {"image":"","video":"","color":"","opacity":0.1}
+    background: {"image":"","video":"","color":"#eef773","opacity":0.1}
   }
   
   // 소셜 링크 기본값 (배열 형태로 변경)
